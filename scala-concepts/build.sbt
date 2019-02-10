@@ -23,7 +23,16 @@ version := "1.0"
 
 // Want to use a published library in your project?
 // You can define other libraries as dependencies in your build like this:
-libraryDependencies += "org.typelevel" %% "cats-core" % "1.4.0"
+
+val scalaLogging = "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
+val logback = "ch.qos.logback" %  "logback-classic" % "1.2.3"
+
+
+libraryDependencies ++= Seq (
+  scalaLogging,
+  logback
+)
+
 // Here, `libraryDependencies` is a set of dependencies, and by using `+=`,
 // we're adding the cats dependency to the set of dependencies that sbt will go
 // and fetch when it starts up.
